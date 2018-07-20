@@ -1,0 +1,743 @@
+*{
+    box-sizing:border-box;
+    user-select:none;
+}
+
+@keyframes shake{
+from{margin-left:0px}
+to{margin-left:10%;}
+}
+
+body{
+    margin:0px;
+}
+
+ul{
+    list-style-type:none;
+}
+
+/*Entire web container*/
+.web{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+}
+
+/*Menu*/
+/*Menu container*/
+.list{
+    position:fixed;
+    top:0px;
+    left:0px;
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+    height:100vh;
+    width:20%;
+    border:3px solid black;
+}
+ /*Menu content container*/
+.list>div{
+    display:inherit;
+    height:25%;
+    width:100%;
+    background-color:#2e2e2e;
+    border:3px solid green;
+    align-items: center;
+    justify-content: center;
+}
+/*Menu content container content*/
+.list p{
+    color:white;
+    font-size:200%;
+    text-align:center;
+}
+/*menu content container pseudo-classes*/
+.list>div:hover{
+    background-color:lightblue;
+    border-left-color:blue;
+    border-left-style:solid;
+    border-left-width:12px;
+}
+
+.list>div:active{
+    background-color:grey;
+}
+
+/*content display*/
+.displayPort{
+    width:80%;
+    height:100%;
+    position:relative;
+    overflow:auto;
+}
+
+.displayPort>div{
+    position:relative;
+    padding:10px;
+}
+
+.accordion:hover{
+    border-left-color:blueviolet;
+    border-left-width:3px;
+    border-left-style:solid;
+    cursor:pointer;
+}
+/*Accordion*/
+.accordion{
+    font-size:1.5em;
+    font-family: 'Poiret One', cursive;
+    background-color:#90caf9;
+    height:20%;
+    padding:1vw;
+}
+
+.panel{
+    font-family: 'Titillium Web', sans-serif;
+    font-size:1.2em;
+    max-height:1px;
+    color:black;
+    transition:max-height 1s;
+    overflow:hidden;
+}
+
+.introText >h1{
+    font-family: 'Poiret One', cursive;
+    font-size:1.8em;
+}
+.introText >p{
+    font-size:20px;
+}
+
+.introText:after{
+    content:"";
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-image:url("https://img.purch.com/o/aHR0cDovL3d3dy5sYXB0b3BtYWcuY29tL2ltYWdlcy93cC9wdXJjaC1hcGkvaW5jb250ZW50LzIwMTIvMTIvR2FkZ2V0LUhvdy10by1CdXktYS1Ob3RlYm9vay1JbnRyb19zZi5qcGc=");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    z-index:-1;
+    opacity:0.45;
+}
+
+.magImges{
+    position:absolute;
+    left:-100%;
+    width:100%;
+    transition:left 0.5s,
+    opacity 0.5s;
+    opacity:0;
+    background-color:rgb(220, 220, 240);
+    padding:30px;
+    z-index:1;
+    display:block;
+    text-align:center;
+    top:0px;
+}
+
+.magImges>img{
+    max-width:100%;
+}
+
+#closeMag{
+    position:absolute;
+    width:30px;
+    height:30px;
+    border:3px solid black;
+    background-color:white;
+    right:1vw;
+    top:1vh;
+    text-align:center;
+    cursor:pointer;
+}
+
+.switch{
+    padding:10px;
+    display:inline-block;
+    flex-direction:row;
+    border:3px solid rgb(32, 209, 233);
+    overflow:hidden;
+    position:relative;
+    border-radius:5px;
+}
+
+
+.switch>div{
+    user-select:none;/*Disable text highlighting*/
+    font-family: 'Poiret One', cursive;
+    font-size:1.5em;
+    display:inline-block;
+    background-color:rgb(134, 174, 247);
+    border: 3px solid transparent;
+}
+
+.switch>div:hover{
+    cursor:pointer;
+    border-bottom-color:rgb(14, 117, 214)
+}
+
+.switch>div:active{
+    background-color:rgb(5, 238, 255);
+}
+
+.switch:before{
+    content:"";
+    background-color:rgb(32, 14, 73);
+    opacity:0.5;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:110%;
+    height:110%;
+    z-index:-1;
+    filter:blur(4px);
+}
+
+.switch:after{
+    display:block;
+    content:"";
+}
+
+.laptopDes >h1{
+    font-family: 'Poiret One', cursive;
+    font-size:1.8em;
+}
+
+.laptopDes >p{
+    color:rgb(255, 255, 255);
+    font-size:20px;
+}
+
+.laptopDes fieldset{
+    font-size:20px;
+    position:relative;
+    z-index:0;
+    border-radius:5px;
+}
+
+.laptopDes span{
+    font-family: 'Gaegu', cursive;
+}
+
+.laptopDes fieldset:after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:-1;
+    background-color:white;
+    opacity:0.5;
+    transition:background-color 1s;
+}
+
+.laptopDes fieldset ol >li{
+    font-family: 'Poiret One', cursive;
+    font-size:1.2em;
+}
+
+.laptopDes fieldset h2{
+    font-family: 'Poiret One', cursive;
+}
+
+.caption{/*A stacking context for each aspect*/
+    position:relative;
+    text-align:center;
+    left:-10%;
+    padding:20px;
+    opacity:0;
+    transition:left 1s,
+    opacity 1s;
+    font-family: 'Titillium Web', sans-serif;
+    z-index:0;/* prevents the sudden change in opacity*/
+    /*Possible reason: according to MDN, 
+    a stacking context is created when a positioned elements had a z-index value other than auto*/
+    /*But opacity is set to 0! Which means a new stacking context is created!*/
+    /*It is modified later on by fadeIn class, which resulted in a final value of opacity of 1*/
+    /*And opacity:1 is not a valid expression to create a new stacking context*/
+}
+
+.caption p{
+    margin:5px;
+}
+
+.caption:after{
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    border-radius:30px;
+    filter:blur(3px);
+    opacity:0.5;
+    transition:opacity 1s,
+    filter 0.5s;
+}
+
+.caption:hover::after{
+    opacity:0.4;
+    filter:blur(15px);
+}
+
+/*Detailed specifications*/
+.laptopDes .Des .processor:after{
+    background:url("https://images.idgesg.net/images/article/2017/08/intel-8th-gen-core-i7-100732396-large.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.laptopDes .Des .gpu ul{
+    text-align:left;
+}
+
+.laptopDes .Des .gpu:after{
+    background:url("data:image/png;base64,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");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.laptopDes .Des .ram p>strong{
+    color:white;
+}
+
+.laptopDes .Des .ram ul{
+    text-align:left;
+}
+.laptopDes .Des .ram:after{
+    background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjfqP03O8fbD0w6VcS1p1cKhDthky2Ugjw9XGT0Du9i29SHsEqzg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.laptopDes .Des .storage:after{
+    background:url("https://s7d2.scene7.com/is/image/SamsungUS/Pdpgallery-mz-7ke256bw-600x600-C3-052016?$product-details-jpg$");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.laptopDes .Des .os:after{
+    background:url("https://cdn.vox-cdn.com/thumbor/lFu8x2kE_Z89lhJgMgC3jDsByAk=/0x0:2040x1361/1200x800/filters:focal(857x518:1183x844)/cdn.vox-cdn.com/uploads/chorus_image/image/59578017/mswindows2_2040.0.0.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+/*End of detailed specifications, start of benchmark tests*/
+
+.laptopDes .BCM ol h2{
+    position:relative;
+    padding:1px;
+    display:inline;
+    cursor:pointer;
+    text-shadow: 2px 2px white;
+}
+
+.laptopDes .BCM ol h2:hover{
+    color:rgb(179, 179, 218);
+    -webkit-text-stroke-width:0.5px;
+    -webkit-text-stroke-color:black;
+}
+
+.laptopDes .BCMtopic ul li{
+    font-family: 'Titillium Web', sans-serif;
+    padding-left:10px;
+}
+
+.laptopDes .BCMtopic ul li:hover{
+    border-left-color:rgb(97, 92, 92);
+    border-left-width:5px;
+    border-left-style:solid;
+}
+
+.laptopDes .BCMtopic h2:after{
+    content:"Show/Hide photo";
+    position:absolute;
+    bottom:0px;
+    left:100%;
+    border:3px solid transparent;
+    background-color:rgb(43, 230, 243);
+    opacity:0;
+    transition:opacity 0.8s;
+    border-radius:10px;
+}
+
+.laptopDes .BCMtopic h2:hover::after{
+    -webkit-text-stroke-width:0.1px;
+    opacity:0.8;
+}
+
+.laptopDes .BCM img{
+    max-width:20vw;
+}
+
+.laptopDes .BCM img:hover{
+    transform:scale(1.1);
+    transition:transform 0.5s;
+    cursor:pointer;
+}
+
+.laptopDes .BCM img:active{
+    transform:scale(0.9);
+    transition:transform 0.2s;
+}
+
+.laptopDes .BCM .gallery::after{
+    content:"Press to go full mode";
+    display:inline;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:white;
+    color:black;
+    opacity:0;
+    transition:opacity 0.5s;
+}
+
+.laptopDes .BCM .gallery:hover::after{
+    opacity:0.5;
+}
+
+.laptopDes:after{
+    content:"";
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-image:url("https://i.ytimg.com/vi/jwn501sMECk/maxresdefault.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    z-index:-2; 
+    opacity:0.65;
+}
+
+.reviewDet{
+    position:relative;
+}
+
+.reviewDet >h1{
+    font-family: 'Poiret One', cursive;
+    font-size:1.8em;
+}
+
+.reviewDet span{
+    font-family: 'Gaegu', cursive;
+    font-size:35px;
+    text-shadow:5px 5px grey;
+}
+
+.reviewDet >h2{
+    font-family: 'Poiret One', cursive;
+    font-size:1.5em;
+    text-shadow: 1px 2px white;
+}
+
+.reviewDet >p{
+    font-size:20px;
+}
+
+.reviewDet img{
+    max-width:50%;
+    transition:transform 0.5s;
+}
+
+.reviewDet img:hover{
+    transform:scale(1.05);
+}
+
+/*Replicate caption element*/
+.reviewDet .aspects{
+    border:3px solid red;
+    position:relative;
+    z-index:0;
+    font-size:15px;
+    margin-bottom:1%;
+    padding:1%;
+}
+
+.reviewDet .aspects>p{
+    margin:0px;
+}
+
+.textBox{
+    max-width:50%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size:20px;
+    padding:1%;
+    display:inline-block;
+}
+/*Replicate fieldset after pesudo-element*/
+.textBox:after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    background-color:white;
+    opacity:0.8;
+    z-index:-1;
+    display:block;
+}
+
+.reviewDet .grid{
+    display:flex;
+    position:relative;
+    flex-direction:row;
+    align-content:center;
+    flex-wrap:wrap;
+    z-index:1;
+}
+
+.grid img{
+    max-width:50%;
+}
+
+.grid .container{
+    left:0px;
+    width:16.65%;
+    transform-style:preserve-3d;
+    transition:transform 1s;
+    z-index:0;
+    text-align:center;
+    font-family: 'Titillium Web', sans-serif;
+    cursor:pointer;
+}
+
+.grid .container:hover{
+    z-index:1;
+    transform:rotateY(-180deg);
+}
+
+.grid .container:active{
+    transform:rotateY(0deg)
+}
+
+.grid .container .card{
+    backface-visibility:hidden;
+}
+
+.grid .container .front{
+    text-align:center;
+    font-size:15px;
+}
+
+.grid .container .front:hover::after{
+    transition:opacity 0.5s;
+    opacity:0;
+}
+
+.grid .container:nth-child(even) .front:active::after{
+    transform: skewX(10deg);
+    opacity:1;
+}
+
+.grid .container:nth-child(odd) .front:active::after{
+    transform: skewX(-10deg);
+    opacity:1;
+}
+
+.grid .container .back{
+    text-align:left;
+    position:absolute;
+    top:100%;
+    right:0px;
+    width:200%;
+    transform:rotateY(180deg);
+    border:3px solid black;
+}
+
+#pushLeft{
+    left:0px;
+}
+
+.reviewPanels{
+    margin-top:5%;
+    border:3px solid black;
+    position:relative;
+    z-index:0;
+    transform:scale(1);
+}
+
+.imgCollection{
+    position:relative;
+    z-index:0;
+    max-width:50%;
+    overflow:hidden;
+}
+
+.imgCollection>img{
+    position:relative;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    max-width:100%;
+    float:inherit;
+}
+
+.imgCollection>img:active{
+    transform:rotateZ(15deg)
+}
+
+.reviewPanel{
+    width:100%;
+    position:relative;
+    z-index:0;
+    border:3px solid white;
+    overflow:hidden;/*BFC*/
+}
+
+.reviewPanel::after{
+    content:"Press on Picture for Next";
+    position:absolute;
+    left:calc(50% - 50px);
+    bottom:1%;
+    text-align:center;
+    font-size:30px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:white;
+    color:black;
+    opacity:0;
+    transition:opacity 0.5s;
+    box-shadow: 3px 3px 1px     black
+}
+
+.reviewPanel:hover::after{
+    opacity:0.8;
+}
+
+#accessories .aspects{
+    cursor:pointer;
+}
+
+#accessories .aspects::after{
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color:white;
+    opacity:0.5;
+    z-index:-1;
+    transition:opacity 0.2s;
+}
+
+#accessories .aspects:hover::after{
+    filter:blue(3px);
+    opacity:1;
+}
+
+.reviewPanels:after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    background-color:blue;
+    opacity:0.5;
+    z-index:-1;
+}
+
+.reviewDet:after{
+    content:"";
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-image:url("Review photoes/overview2.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    z-index:-1; 
+    opacity:0.45;
+}
+
+.authorRef{
+    position:relative;
+}
+
+.authorRef>h1{
+    font-family: 'Poiret One', cursive;
+    font-size:1.8em;
+}
+
+.authorRef>h2{
+    font-family: 'Poiret One', cursive;
+    font-size:1.5em;
+    text-shadow: 1px 2px white;
+}
+
+.authorRef .halfBox{
+    max-width:50%;
+    font-size:20px;
+}
+
+.authorRef .info{
+    max-width:90%;
+    position:relative;
+    transform:scale(1);
+    border:3px solid black;
+    animation-name:shake;
+    animation-duration:2s;
+    animation-fill-mode:forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.authorRef .relativebox{
+    position: relative;
+}
+
+.authorRef img{
+    max-width:100%;
+}
+
+.authorRef::after{
+    content:"";
+    background:url("Author photo/writing codes.png");
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    opacity:0.5;
+    z-index:-2;
+}
+/*Keep this at the bottom to overlap display:block*/
+
+.hidden{
+    display:none;
+}
+
+.fadeIn{
+    left:0px;
+    opacity:1;
+}
+
+.floatLeft{
+    float:left;
+}
+
+.floatRight{
+    float:right;
+}
+/*A demonstration of clearfix and float combination*/
+.clearfix::after{
+    content: "";
+    clear: both;
+    display:table;
+}
+
