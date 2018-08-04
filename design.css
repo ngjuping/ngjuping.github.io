@@ -222,6 +222,15 @@ ul{
     font-family: 'Gaegu', cursive;
 }
 
+.laptopDes a{
+    color:rgb(250, 216, 216);
+}
+
+.laptopDes a:hover{
+    color:white;
+    transition:color 0.5s;
+}
+
 .laptopDes fieldset:after{
     content:"";
     position:absolute;
@@ -460,6 +469,7 @@ ul{
     font-size:15px;
     margin-bottom:1%;
     padding:1%;
+    overflow:hidden;
 }
 
 .reviewDet .aspects>p{
