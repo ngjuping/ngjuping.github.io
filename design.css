@@ -468,12 +468,16 @@ ul{
     z-index:0;
     font-size:15px;
     margin-bottom:1%;
-    padding:1%;
+    padding:10px;
     overflow:hidden;
 }
 
 .reviewDet .aspects>p{
     margin:0px;
+}
+
+.reviewDet .aspects>img{
+    margin-top:3vh;
 }
 
 .textBox{
